@@ -1,0 +1,7 @@
+## Find directories that do NOT contain a file whose name I know
+## source: https://askubuntu.com/questions/196960/find-directories-that-dont-contain-a-file
+find base_dir -mindepth 2 -maxdepth 2 -type d '!' -exec test -e "{}/name_of_my_file.file" ';' -print
+
+## Find files in a directory that contain patterns which are in a text file
+ls my_directory/ | grep -f file_containing_patterns.txt 
+

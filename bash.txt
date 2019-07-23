@@ -5,3 +5,23 @@ find base_dir -mindepth 2 -maxdepth 2 -type d '!' -exec test -e "{}/name_of_my_f
 ## Find files in a directory that contain patterns which are in a text file
 ls my_directory/ | grep -f file_containing_patterns.txt 
 
+## Find directories by linux permission value. This finds all directories that have read permission for user and anything else for the other fields
+find ./ -type d -perm /u=r
+
+## Find some files and then move them somewhere
+## source: https://unix.stackexchange.com/questions/154818/how-to-integrate-mv-command-after-find-command
+find path_A -name '*AAA*' -exec mv -t path_B {} +
+
+
+less file
+LINE_NUMBERg
+
+vi +LINE_NUMBER file
+
+
+## sort by date modified
+ls -t
+
+
+## search for text inside files (e.g. .R files)
+grep -rnw --include=\*.R './' -e 'TEXT_TO_SEARCH'
